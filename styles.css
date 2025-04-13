@@ -11,10 +11,10 @@ body {
 /* Header Styles */
 header {
     text-align: center;
-    padding: 20px;
+    padding: 10px; /* Reduced padding to half of the original size */
     background-color: #4CAF50;
     color: #fff;
-    font-size: 2em;
+    font-size: 1.5em; /* Reduced font size proportionally */
     font-weight: bold;
     border-bottom: 3px solid #333;
 }
