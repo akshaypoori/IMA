@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMA - Sign In</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>IMA</h1>
+        <h2>Sign In</h2>
+        <form onsubmit="handleLogin(event)">
+            <label for="userType">Login As:</label>
+            <select id="userType" required>
+                <option value="">Select</option>
+                <option value="advertiser">Advertiser</option>
+                <option value="influencer">Influencer</option>
+            </select>
+            
+            <label for="username">Username</label>
+            <input type="text" id="username" placeholder="Enter your username" required>
+            
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Enter your password" required>
+            
+            <button type="submit">Sign In</button>
+        </form>
+    </div>
+
+    <script>
+        function handleLogin(event) {
+            event.preventDefault();
+            const userType = document.getElementById('userType').value;
+            if (!userType) {
+                alert("Please select whether you're an Advertiser or Influencer.");
+                return;
+            }
+            localStorage.setItem('userType', userType);
+            if (userType === 'advertiser') {
+                window.location.href = 'advertiser-dashboard.html';
+            } else {
+                window.location.href = 'influencer-dashboard.html';
+            }
+        }
+    </script>
+</body>
+</html>

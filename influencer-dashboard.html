@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMA - Influencer Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>IMA</h1>
+        <h2>Influencer Dashboard</h2>
+        <table>
+            <tr><th>Advertiser</th><th>Contact Info</th><th>Chat</th></tr>
+            <tr>
+                <td>Advertiser1</td>
+                <td>contact1@adagency.com</td>
+                <td><button onclick="navigateToChat()">Chat</button></td>
+            </tr>
+            <tr>
+                <td>Advertiser2</td>
+                <td>contact2@adagency.com</td>
+                <td><button onclick="navigateToChat()">Chat</button></td>
+            </tr>
+            <tr>
+                <td>Advertiser3</td>
+                <td>contact3@adagency.com</td>
+                <td><button onclick="navigateToChat()">Chat</button></td>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+        function navigateToChat() {
+            window.location.href = 'chat.html';
+        }
+    </script>
+</body>
+</html>

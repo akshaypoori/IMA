@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMA - Chat</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="chatApp">
+        <div class="contactList">
+            <h2>Contacts</h2>
+            <ul>
+                <li onclick="openChat('Influencer1')">Influencer1</li>
+                <li onclick="openChat('Influencer2')">Influencer2</li>
+                <li onclick="openChat('Influencer3')">Influencer3</li>
+                <li onclick="openChat('Advertiser1')">Advertiser1</li>
+                <li onclick="openChat('Advertiser2')">Advertiser2</li>
+            </ul>
+        </div>
+        <div class="chatWindow">
+            <h2 id="chatWith">Chat with: Select a contact</h2>
+            <div class="chatContainer" id="chatContainer">
+                <!-- Messages will be displayed here -->
+            </div>
+            <div class="chatInput">
+                <input type="text" id="messageInput" placeholder="Type your message...">
+                <button onclick="sendMessage()">Send</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openChat(contact) {
+            document.getElementById('chatWith').innerText = `Chat with: ${contact}`;
+            document.getElementById('chatContainer').innerHTML = `<p><strong>${contact}:</strong> Hi there!</p>`;
+        }
+
+        function sendMessage() {
+            const input = document.getElementById('messageInput');
+            const chatContainer = document.getElementById('chatContainer');
+            if (input.value.trim()) {
+                chatContainer.innerHTML += `<p><strong>You:</strong> ${input.value}</p>`;
+                input.value = '';
+            }
+        }
+    </script>
+</body>
+</html>
