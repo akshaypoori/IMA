@@ -8,13 +8,18 @@ body {
     border: 3px solid #333; /* Moderate border for the overall page */
 }
 
-/* Heading Styles */
-h1 {
-    color: #4CAF50;
-    font-size: 2.5em;
-    margin-bottom: 10px;
+/* Header Styles */
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: #4CAF50;
+    color: #fff;
+    font-size: 2em;
+    font-weight: bold;
+    border-bottom: 3px solid #333;
 }
 
+/* Heading Styles */
 h2 {
     color: #333;
     margin-bottom: 20px;
@@ -31,11 +36,45 @@ h2 {
     overflow: hidden; /* Prevent content overflow */
 }
 
+/* Form Styles */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+label {
+    margin: 10px 0 5px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+select, input, button {
+    margin: 10px;
+    padding: 10px 15px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #333; /* Consistent border style */
+    width: 60%; /* Adjusted for reasonable width */
+}
+
+button {
+    background-color: #4CAF50;
+    color: #fff;
+    cursor: pointer;
+    border: 1px solid #333; /* Refined border for buttons */
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #45A049;
+}
+
 /* Table Styles */
 table {
     width: 100%;
     margin: 20px auto;
-    border-collapse: collapse; /* Merge table borders for consistency */
+    border-collapse: separate;
     border-spacing: 0;
     border: 2px solid #333; /* Strong border for the table */
     border-radius: 10px; /* Rounded edges for the table */
@@ -51,22 +90,93 @@ table th, table td {
     font-weight: bold;
 }
 
-/* Mobile-Responsive Styling */
-@media (max-width: 768px) {
-    .container {
-        max-width: 90%; /* Adjust container width for smaller screens */
-        padding: 15px;
-    }
+/* Chat Page Styles */
+.chatApp {
+    display: flex;
+    height: 100vh;
+    border: 2px solid #333; /* Moderate border around the entire chat app */
+    border-radius: 15px; /* Rounded corners for the chat app */
+}
 
-    table {
-        width: 100%; /* Ensure the table fits within the container */
-    }
+.contactList {
+    width: 25%;
+    background-color: #f0f0f0;
+    border-right: 2px solid #333; /* Defined separation between contact list and chat window */
+    padding: 20px;
+    overflow-y: auto;
+    border-radius: 15px 0 0 15px; /* Rounded left-side corners */
+}
 
-    table th, table td {
-        font-size: 14px; /* Slightly smaller text for better readability */
-    }
+.contactList h2 {
+    color: #4CAF50;
+    margin-bottom: 20px;
+}
 
-    table td {
-        word-wrap: break-word; /* Break long text in cells on mobile */
-    }
+.contactList ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.contactList li {
+    padding: 10px;
+    margin: 5px 0;
+    background-color: #fff;
+    border: 1px solid #333;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.contactList li:hover {
+    background-color: #e8f5e9;
+    border-color: #4CAF50;
+}
+
+.chatWindow {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border: 2px solid #333; /* Refined border for the chat window */
+    border-radius: 0 15px 15px 0; /* Rounded right-side corners */
+    overflow: hidden; /* Ensures content does not overflow */
+}
+
+.chatContainer {
+    flex-grow: 1;
+    border: 1px solid #333;
+    border-radius: 5px;
+    padding: 10px;
+    overflow-y: auto;
+    background-color: #f9f9f9;
+}
+
+.chatContainer p {
+    margin: 5px 0;
+}
+
+.chatInput {
+    display: flex;
+    margin-top: 10px;
+}
+
+.chatInput input {
+    flex-grow: 1;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #333; /* Consistent border for input */
+    margin-right: 10px;
+}
+
+.chatInput button {
+    padding: 10px 15px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: 1px solid #333;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.chatInput button:hover {
+    background-color: #45A049;
 }
