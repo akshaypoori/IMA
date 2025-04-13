@@ -8,90 +8,7 @@ body {
     border: 3px solid #333; /* Moderate border for the overall page */
 }
 
-/* Heading Styles */
-h1 {
-    color: #4CAF50;
-    font-size: 2.5em;
-    margin-bottom: 10px;
-}
-
-h2 {
-    color: #333;
-    margin-bottom: 20px;
-}
-
-/* Container Styles */
-.container {
-    padding: 20px;
-    margin: 20px auto;
-    max-width: 800px;
-    background-color: #f9f9f9;
-    border: 2px solid #333; /* Moderate border for containers */
-    border-radius: 15px; /* Rounded borders for dashboards and containers */
-}
-
-/* Form Styles */
-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-label {
-    margin: 10px 0 5px;
-    font-size: 16px;
-    font-weight: bold;
-}
-
-select, input, button {
-    margin: 10px;
-    padding: 10px 15px;
-    font-size: 16px;
-    border-radius: 5px;
-    border: 1px solid #333; /* Consistent border style */
-    width: 60%; /* Adjusted for reasonable width */
-}
-
-button {
-    background-color: #4CAF50;
-    color: #fff;
-    cursor: pointer;
-    border: 1px solid #333; /* Refined border for buttons */
-    font-weight: bold;
-}
-
-button:hover {
-    background-color: #45A049;
-}
-
-/* Table Styles */
-table {
-    width: 100%;
-    margin: 20px auto;
-    border-collapse: separate;
-    border-spacing: 0;
-    border: 2px solid #333; /* Defined border for the table */
-    border-radius: 15px; /* Rounded edges for the table */
-    overflow: hidden;
-}
-
-table th, table td {
-    border: 1px solid #333; /* Consistent cell borders */
-    padding: 10px;
-    text-align: center;
-    background-color: #f9f9f9;
-    color: #333;
-    font-weight: bold;
-}
-
-/* Chat Page Styles */
-.chatApp {
-    display: flex;
-    height: 100vh;
-    border: 2px solid #333; /* Moderate border around the entire chat app */
-    border-radius: 15px; /* Rounded corners for the chat app */
-}
-
+/* Contact List Styles */
 .contactList {
     width: 25%;
     background-color: #f0f0f0;
@@ -109,15 +26,19 @@ table th, table td {
 .contactList ul {
     list-style: none;
     padding: 0;
+    margin: 0;
 }
 
 .contactList li {
     padding: 10px;
     margin: 5px 0;
     background-color: #fff;
-    border: 1px solid #333; /* Defined border for contact items */
+    border: 1px solid #333;
     border-radius: 5px;
     cursor: pointer;
+    overflow: hidden;
+    text-overflow: ellipsis; /* Add ellipsis if the text is too long */
+    white-space: nowrap; /* Prevent wrapping */
 }
 
 .contactList li:hover {
@@ -125,56 +46,29 @@ table th, table td {
     border-color: #4CAF50;
 }
 
-.chatWindow {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-    border: 2px solid #333; /* Refined border for the chat window */
-    border-radius: 0 15px 15px 0; /* Rounded right-side corners */
+.contactList li span {
+    display: block;
+    max-width: 100%; /* Ensure the text stays within bounds */
 }
 
-.chatWindow h2 {
-    color: #4CAF50;
-    margin-bottom: 10px;
-}
+/* Responsive Fix for Mobile Devices */
+@media (max-width: 768px) {
+    .contactList {
+        width: 100%; /* Make the contact list take full width on smaller screens */
+        border-right: none;
+        border-radius: 15px; /* Full-rounded borders for smaller devices */
+    }
 
-.chatContainer {
-    flex-grow: 1;
-    border: 1px solid #333; /* Balanced border for the chat area */
-    border-radius: 5px; /* Rounded edges for the chat container */
-    padding: 10px;
-    overflow-y: auto;
-    background-color: #f9f9f9;
-}
+    .chatApp {
+        flex-direction: column; /* Stack elements vertically on small screens */
+    }
 
-.chatContainer p {
-    margin: 5px 0;
-}
+    .contactList li {
+        font-size: 14px; /* Adjust font size for better readability */
+    }
 
-.chatInput {
-    display: flex;
-    margin-top: 10px;
-}
-
-.chatInput input {
-    flex-grow: 1;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #333; /* Consistent border for input */
-    margin-right: 10px;
-}
-
-.chatInput button {
-    padding: 10px 15px;
-    background-color: #4CAF50;
-    color: #fff;
-    border: 1px solid #333; /* Refined border for send button */
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.chatInput button:hover {
-    background-color: #45A049;
-    border-color: #333;
+    .chatWindow {
+        margin-top: 10px;
+        border-radius: 15px; /* Rounded corners for the chat window on mobile */
+    }
 }
